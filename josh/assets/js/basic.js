@@ -12,6 +12,115 @@ $(document).ready(function() {
     format: '(,ddd).dd',
     theme: 'minimal'
   });
+  od1eng = new Odometer({
+    el: document.querySelector('#eng-subs'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od2eng = new Odometer({
+    el: document.querySelector('#eng-view'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od1hin = new Odometer({
+    el: document.querySelector('#hin-subs'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od2hin = new Odometer({
+    el: document.querySelector('#hin-view'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od1mar = new Odometer({
+    el: document.querySelector('#mar-subs'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od2mar = new Odometer({
+    el: document.querySelector('#mar-view'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od1pun = new Odometer({
+    el: document.querySelector('#pun-subs'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od2pun = new Odometer({
+    el: document.querySelector('#pun-view'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od1guj = new Odometer({
+    el: document.querySelector('#guj-subs'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od2guj = new Odometer({
+    el: document.querySelector('#guj-view'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od1tam = new Odometer({
+    el: document.querySelector('#tam-subs'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od2tam = new Odometer({
+    el: document.querySelector('#tam-view'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od1tel = new Odometer({
+    el: document.querySelector('#tel-subs'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od2tel = new Odometer({
+    el: document.querySelector('#tel-view'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od1mal = new Odometer({
+    el: document.querySelector('#mal-subs'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od2mal = new Odometer({
+    el: document.querySelector('#mal-view'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od1ban = new Odometer({
+    el: document.querySelector('#ban-subs'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+  od2ban = new Odometer({
+    el: document.querySelector('#ban-view'),
+    value: 0,
+    format: '(,ddd).dd',
+    theme: 'minimal'
+  });
+//*************End of Odometers****************
   var YT = {};
   YT.keyManager = {
     keys: ["AIzaSyCirzn_euhI10MY2_Mo1gQjgult6_Rw4CY", "AIzaSyBh9NX-IZVLyk6C2nt448dYYuwmIMdPvpI", "AIzaSyBR1Fz9C-5PM1-56g6l3fc3jTNxeVioIrI", "AIzaSyDgNPwHuae7dtgwmZwhpdKDC8xYahugz-w", "AIzaSyCuXXjTVn79AENIQiJfRSYDLzeZIzZyqg4"],
@@ -43,6 +152,46 @@ $(document).ready(function() {
           b.then(function(x){
             countMap[x.items[0].id] =parseInt(x.items[0].statistics.subscriberCount);
             countMapV[x.items[0].id] =parseInt(x.items[0].statistics.viewCount);
+            switch(x.items[0].id){
+              case "UCGYlNGlloLLZiAL3zBgbMgQ":
+                od1eng.update(x.items[0].statistics.subscriberCount);
+                od2eng.update(x.items[0].statistics.viewCount);
+              break;
+              case "UC5MaEdGrolKRJXFdXgD7RAA":
+                od1hin.update(x.items[0].statistics.subscriberCount);
+                od2hin.update(x.items[0].statistics.viewCount);
+              break;
+              case "UC6KXCdfpkCGmRTgBPj9hdbQ":
+                od1mar.update(x.items[0].statistics.subscriberCount);
+                od2mar.update(x.items[0].statistics.viewCount);
+              break;
+              case "UCHO1It3X8dB0Lfxer_4ev":
+                od1pun.update(x.items[0].statistics.subscriberCount);
+                od2pun.update(x.items[0].statistics.viewCount);
+              break;
+              case "UChlEKXoTTTizQN5trVkyNiQ":
+                od1guj.update(x.items[0].statistics.subscriberCount);
+                od2guj.update(x.items[0].statistics.viewCount);
+              break;
+              case "UCTOWKyc49SY32OYtXontXoQ":
+                od1tam.update(x.items[0].statistics.subscriberCount);
+                od2tam.update(x.items[0].statistics.viewCount);
+              break;
+              case "UCE6Y7GPi7LG3_w0cmBFZRwA":
+                od1tel.update(x.items[0].statistics.subscriberCount);
+                od2tel.update(x.items[0].statistics.viewCount);
+              break;
+              case "UCUbhtpmudp_9vfmytdcD3lQ":
+                od1mal.update(x.items[0].statistics.subscriberCount);
+                od2mal.update(x.items[0].statistics.viewCount);
+              break;
+              case "UC2KhNQ3pAmkN6Kepf8ccFZQ":
+                od1ban.update(x.items[0].statistics.subscriberCount);
+                od2ban.update(x.items[0].statistics.viewCount);
+              break;
+              default:
+              break;
+            }
           })
         })
       });

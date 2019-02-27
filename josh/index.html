@@ -40,7 +40,8 @@
 		<div class="container">
 			<h3><center>Josh</center></h3>
 			<div class="row">
-				<div class="col-12" style="text-align: center; "><h1 id="total"></h1></div>
+				<div class="col-12" style="text-align: center; ">Subs:<h1 id="total"></h1></div>
+				<div class="col-12" style="text-align: center; ">Views:<h1 id="totalV"></h1></div>
 				<div class="col-9" style="text-align: center; "><iframe frameborder="0" src="https://akshatmittal.com/youtube-realtime/embed/#!/UCGYlNGlloLLZiAL3zBgbMgQ" style="border: 0; width:max; height:max; background-color: #FFF;" id="english"></iframe></div>
 				<div class="col-9" style="text-align: center; "><iframe frameborder="0" src="https://akshatmittal.com/youtube-realtime/embed/#!/UC5MaEdGrolKRJXFdXgD7RAA" style="border: 0; width:max; height:max; background-color: #FFF;"></iframe></div>
 				<div class="col-9" style="text-align: center; "><iframe frameborder="0" src="https://akshatmittal.com/youtube-realtime/embed/#!/UC6KXCdfpkCGmRTgBPj9hdbQ" style="border: 0; width:max; height:max; background-color: #FFF;"></iframe></div>
@@ -50,33 +51,38 @@
 				<div class="col-9" style="text-align: center; "><iframe frameborder="0" src="https://akshatmittal.com/youtube-realtime/embed/#!/UCHO1It3X8dB0Lfxer_4ev-A" style="border: 0; width:max; height:max; background-color: #FFF;"></iframe></div>
 				<div class="col-9" style="text-align: center; "><iframe frameborder="0" src="https://akshatmittal.com/youtube-realtime/embed/#!/UCUbhtpmudp_9vfmytdcD3lQ" style="border: 0; width:max; height:max; background-color: #FFF;"></iframe></div>
 				<div class="col-9" style="text-align: center; "><iframe frameborder="0" src="https://akshatmittal.com/youtube-realtime/embed/#!/UChlEKXoTTTizQN5trVkyNiQ" style="border: 0; width:max; height:max; background-color: #FFF;"></iframe></div>
-				
+
 			</div>
 		</div>
 		<script src="https://akshatmittal.com/youtube-realtime/assets/plugins/odometer/odometer.min.js" ></script>
-	<script type="text/javascript">
-
-		window.odometerOptions = {
-  auto: false, // Don't automatically initialize everything with class 'odometer'
-  selector: '.my-numbers', // Change the selector used to automatically find things to be animated
-  format: '(,ddd).dd', // Change how digit groups are formatted, and how many digits are shown after the decimal point
-  duration: 3000, // Change how long the javascript expects the CSS animation to take
-  theme: 'car', // Specify the theme (if you have more than one theme css file on the page)
-  animation: 'count' // Count is a simpler animation method which just increments the value,
+		<script type="text/javascript">
+	/*		window.odometerOptions = {
+  			auto: false, // Don't automatically initialize everything with class 'odometer'
+  			selector: '.my-numbers', // Change the selector used to automatically find things to be animated
+  			format: '(,ddd).dd', // Change how digit groups are formatted, and how many digits are shown after the decimal point
+  			duration: 3000, // Change how long the javascript expects the CSS animation to take
+  			theme: 'car', // Specify the theme (if you have more than one theme css file on the page)
+  			animation: 'count' // Count is a simpler animation method which just increments the value,
                      // use it when you're looking for something more subtle.
-};
-		$(document).ready(function() {
-    	var el = document.querySelector('#total');
+			};
+		*/	$(document).ready(function() {
+    		var el = document.querySelector('#total');
 
-    od = new Odometer({
+    	od = new Odometer({
         el: el,
         value: 0,
         format: '(,ddd).dd',
         theme: 'minimal'
-    });
-    // "AIzaSyAH88MZSlEKfL-fzYp8_Hu0nCbYVp3ikTs"
-    var YT = {};
-    YT.keyManager = {
+    	});
+			od2 = new Odometer({
+		    el: document.querySelector('#totalV'),
+		    value: 0,
+		    format: '(,ddd).dd',
+		    theme: 'minimal'
+		  });
+    	// "AIzaSyAH88MZSlEKfL-fzYp8_Hu0nCbYVp3ikTs"
+    	var YT = {};
+    	YT.keyManager = {
         keys: ["AIzaSyCirzn_euhI10MY2_Mo1gQjgult6_Rw4CY", "AIzaSyBh9NX-IZVLyk6C2nt448dYYuwmIMdPvpI", "AIzaSyBR1Fz9C-5PM1-56g6l3fc3jTNxeVioIrI", "AIzaSyDgNPwHuae7dtgwmZwhpdKDC8xYahugz-w", "AIzaSyCuXXjTVn79AENIQiJfRSYDLzeZIzZyqg4"],
         keyIndex: 0,
         getKey: function() {
@@ -86,24 +92,27 @@
         shuffleKeys: function() {
             this.keys.shuffle();
         },
-	invalidateKey: function(k){
-	    this.keys = array.filter(function(value, index, arr){
-	        return value !== k;
-	    });
-	}
-    }
-    YT.updateManager = {
+				invalidateKey: function(k){
+	    		this.keys = array.filter(function(value, index, arr){
+	        	return value !== k;
+	    		});
+				}
+    	}
+    	YT.updateManager = {
         updateSubs: function(e) {
             od.update(e);
         }
-    };
-    YT.live = {
+    	};
+    	YT.live = {
     	countMap: {},
+			countMapV: {},
         channelIDs: ["UCGYlNGlloLLZiAL3zBgbMgQ", "UC5MaEdGrolKRJXFdXgD7RAA", "UC6KXCdfpkCGmRTgBPj9hdbQ", "UC2KhNQ3pAmkN6Kepf8ccFZQ", "UCE6Y7GPi7LG3_w0cmBFZRwA", "UCTOWKyc49SY32OYtXontXoQ", "UCHO1It3X8dB0Lfxer_4ev-A", "UCUbhtpmudp_9vfmytdcD3lQ", "UChlEKXoTTTizQN5trVkyNiQ"],
         update: function() {
             var total_count = 0;
+						var total_countV = 0;
             var promises = [];
             countMap = this.countMap;
+						countMapV = this.countMapV;
             $.each(this.channelIDs, function(x, y) {
                 promises.push($.getJSON("https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + y + "&key=" + YT.keyManager.getKey()));
             });
@@ -111,16 +120,21 @@
             	count = 0;
             	$.each(a, function(c, b){
             		b.then(function(x){
-            			countMap[x.items[0].id] =parseInt(x.items[0].statistics.subscriberCount);		            	
+            			countMap[x.items[0].id] =parseInt(x.items[0].statistics.subscriberCount);
+									countMapV[x.items[0].id] =parseInt(x.items[0].statistics.viewCount);
             		})
             	})
             });
             this.countMap = countMap;
+						this.countMapV = countMapV;
             console.log(countMap);
             $.each(countMap, function(a, b){total_count+=b});
+						console.log(countMapV);
+            $.each(countMapV, function(a, b){total_countV+=b});
             YT.updateManager.updateSubs(total_count);
-            
-   
+						od2.update(total_countV);
+
+
         },
         timer: null,
         start: function() {
@@ -132,22 +146,22 @@
             clearInterval(this.timer);
         }
     };
-    $(function() {
+
+    	$(function() {
         YT.live.start();
-    });
-    $(document).ready(function(){
-    	$(window).focus(function(){
-	    console.log('started ');
-            YT.live.start();
     	});
-    	$(window).blur(function(){
-            console.log('paused');
-            YT.live.stop();
-        });
-    });
+    	$(document).ready(function(){
+    		$(window).focus(function(){
+	    		console.log('started ');
+          YT.live.start();
+    		});
+    		$(window).blur(function(){
+          console.log('paused');
+          YT.live.stop();
+      	});
+    	});
 });
 	</script>
 	</body>
 
 </html>
-

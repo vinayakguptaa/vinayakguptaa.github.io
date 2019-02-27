@@ -165,7 +165,7 @@ $(document).ready(function() {
                 od1mar.update(x.items[0].statistics.subscriberCount);
                 od2mar.update(x.items[0].statistics.viewCount);
               break;
-              case "UCHO1It3X8dB0Lfxer_4ev":
+              case "UCHO1It3X8dB0Lfxer_4ev-A":
                 od1pun.update(x.items[0].statistics.subscriberCount);
                 od2pun.update(x.items[0].statistics.viewCount);
               break;

@@ -77,19 +77,24 @@
 				</div>
 			</div>
 		</div>
-		<div class="vg-right"><button style="color:#000!important;background-color:#fff!important" id="theme" class="vg-button" onclick="myfunc()">Theme</button></div>
+		<div class="vg-right vg-bar">
+			<button class="vg-btn vg-disabled">THEME</button>
+			<button class="vg-button vg-white" onclick="myfunc1()">Light</button>
+			<button class="vg-button vg-black" onclick="myfunc2()">Dark</button>
+		</div>
 		<script src="assets/js/odometer.min.js"></script>
 		<script>
-			function myfunc() {
-				var x = document.getElementById("page");
-				var y = document.getElementById("theme")
+			function myfunc1() {
+				var x = document.getElementById("page");			
 				if(x.style="color:#fff!important;background-color:#000!important"){
-					x.style ="color:#000!important;background-color:#fff!important";
-					y.style ="color:#fff!important;background-color:#000!important";
-				}else{
-					x.style="color:#fff!important;background-color:#000!important";
-					y.style="color:#000!important;background-color:#fff!important";
-				}
+					x.style ="color:#000!important;background-color:#fff!important";			
+				}														
+			};
+			function myfunc2() {
+				var x = document.getElementById("page");			
+				if(x.style="color:#000!important;background-color:#fff!important"){
+					x.style ="color:#fff!important;background-color:#000!important";			
+				}														
 			};
 		</script>
 		<script src="assets/js/profiles.js"></script>

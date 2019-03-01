@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="assets/css/odometer-theme.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	</head>
-	<body class="vg-black">
+	<body class="vg-black" id="body">
 		<div class="vg-container vg-center"><h3>Josh Talks</h3></div>
 		<div class="vg-container vg-row" style="font-size:1.5rem">
 			<div class="vg-container vg-col s2 vg-hide-small"><p>JoshTalks</p></div>
@@ -14,54 +14,60 @@
 			<div class="vg-container vg-center vg-col s5 vg-mobile">Views:<b id="totalviews" class="odometer">00,000,000,000</b></div>
 		</div>
 		<div class="vg-container vg-row">
-			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p><img id="eng" height="48" width="48">English</p></div>
+			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p><img class="vg-circle" id="eng" height="48" width="48">English</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="eng-subs" class="odometer">00,000,000</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="eng-view" class="odometer">00,000,000</p></div>
 		</div>
 		<div class="vg-container vg-row">
-			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p id="hin-img">Hindi</p></div>
+			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p><img class="vg-circle" id="hin" height="48" width="48">Hindi</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="hin-subs" class="odometer">00,000,000</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="hin-view" class="odometer">00,000,000</p></div>
 		</div>
 		<div class="vg-container vg-row">
-			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p id="mar-img">Marathi</p></div>
+			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p><img class="vg-circle" id="mar" height="48" width="48">Marathi</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="mar-subs" class="odometer">00,000,000</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="mar-view" class="odometer">00,000,000</p></div>
 		</div>
 		<div class="vg-container vg-row">
-			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p id="pun-img">Punjabi</p></div>
+			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p><img class="vg-circle" id="pun" height="48" width="48">Punjabi</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="pun-subs" class="odometer">00,000,000</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="pun-view" class="odometer">00,000,000</p></div>
 		</div>
 		<div class="vg-container vg-row">
-			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p id="tel-img">Telugu</p></div>
+			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p><img class="vg-circle" id="tel" height="48" width="48">Telugu</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="tel-subs" class="odometer">00,000,000</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="tel-view" class="odometer">00,000,000</p></div>
 		</div>
 		<div class="vg-container vg-row">
-			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p id="tam-img">Tamil</p></div>
+			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p><img class="vg-circle" id="tam" height="48" width="48">Tamil</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="tam-subs" class="odometer">00,000,000</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="tam-view" class="odometer">00,000,000</p></div>
 		</div>
 		<div class="vg-container vg-row">
-			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p id="ban-img">Bengali</p></div>
+			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p><img class="vg-circle" id="ben" height="48" width="48">Bengali</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="ban-subs" class="odometer">00,000,000</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="ban-view" class="odometer">00,000,000</p></div>
 		</div>
 		<div class="vg-container vg-row">
-			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p id="guj-img">Gujarati</p></div>
+			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p><img class="vg-circle" id="guj" height="48" width="48">Gujarati</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="guj-subs" class="odometer">00,000,000</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="guj-view" class="odometer">00,000,000</p></div>
 		</div>
 		<div class="vg-container vg-row">
-			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p id="mal-img">Malyalam</p></div>
+			<div class="vg-cell vg-container vg-center vg-col s2 vg-cell-middle vg-mobile"><p><img class="vg-circle" id="mal" height="48" width="48">Malyalam</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="mal-subs" class="odometer">00,000,000</p></div>
 			<div class="vg-cell vg-container vg-center vg-col s5 vg-cell-middle vg-mobile"><p id="mal-view" class="odometer">00,000,000</p></div>
 		</div>
-		<div class="vg-right"><button class="vg-button vg-white"><a href="light.html">Theme</a></button></div>
+		<div class="vg-right"><button class="vg-button vg-white" onclick="myfunc()"><a href="light.html">Theme</a></button></div>
 		<script src="assets/js/odometer.min.js"></script>
+		<script>
+			function myfunc() {
+				var x = document.getElementById("body");
+				x.class="vg-white";
+			}
+		</script>
+		<script src="assets/js/profiles.js"></script>
 		<script src="assets/js/basic.js"></script>
 		<script src="assets/js/stats.js"></script>
-		<script src="assets/js/profiles.js"></script>
 	</body>
 </html>

@@ -1,1 +1,9 @@
-document.getElementById("eng").src="assets/pics/hin.png";
+document.getElementById("eng").src="assets/pics/eng.png";
+document.getElementById("hin").src="assets/pics/hin.png";
+document.getElementById("mar").src="assets/pics/mar.png";
+document.getElementById("mal").src="assets/pics/mal.png";
+document.getElementById("guj").src="assets/pics/guj.png";
+document.getElementById("tam").src="assets/pics/tam.png";
+document.getElementById("tel").src="assets/pics/tel.png";
+document.getElementById("ben").src="assets/pics/ben.png";
+document.getElementById("pun").src="assets/pics/pun.png";

@@ -64,22 +64,12 @@ YT.live = {
     $.each(countMapV, function(a, b){total_countV+=b});
     od1.update(total_count);
     od2.update(total_countV);
-  },/*
-  profiles: function() {
-    var = promise[];
-    $.each(this.channelIDs, function(x, y) {
-        promise.push($.getJSON("https://www.googleapis.com/youtube/v3/channels?part=snippet.thumbnails&id=" + y + "&key=" + YT.keyManager.getKey()));
-    });
-    $when(promise).done(function(a) {
-      getElementById("eng").src=a.items[0].snippet.thumbnails.default.url;
-    });
-  };*/
+  },
   timer: null,
   start: function() {
-    //YT.live.profiles();
     this.timer = setInterval(function(e) {
         YT.live.update();
-    }, 1000);
+    }, 3000);
 },
   stop: function() {
     clearInterval(this.timer);

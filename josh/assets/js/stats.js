@@ -142,7 +142,7 @@ YT.live = {
     YT.live.profile();
     this.timer = setInterval(function(e) {
         YT.live.update();
-    }, 3000);
+    }, 4000);
 },
   stop: function() {
     clearInterval(this.timer);

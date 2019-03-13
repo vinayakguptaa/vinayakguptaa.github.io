@@ -4,9 +4,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="assets/css/basic.css">
 		<link rel="stylesheet" href="assets/css/odometer-theme.css">
+		<link rel="shortcut icon" type="image/png" href="assets/pics/favicon.png"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	</head>
-	<body id="page" style= "color:#fff!important; background-color:#000!important" >
+	<body id="page" onload="myfunc()" >
 		<div class="vg-container vg-center"><h3>Josh Talks</h3></div>
 		<div class="vg-container vg-row" style="font-size:1.5rem">
 			<div class="vg-container vg-center vg-col s6 vg-mobile">Subs:<b id="totalsubs" class="odometer">00,000,000</b></div>
@@ -14,64 +15,64 @@
 		</div>
 		<div class="vg-container vg-row">
 			<div class="vg-cell vg-mobile vg-col l4 m6 s12">
-				<div class="vg-container vg-center vg-col l3 m4 s3"><p><img class="vg-circle" id="eng" height="48" width="48">English</p></div>
+				<div class="vg-container vg-center vg-col l3 m4 s3"><p><img src="assets/pics/icon.png" class="vg-circle" id="eng" height="60" width="60">English</p></div>
 				<div class="vg-container vg-center vg-col l9 m8 s9">
 					<p id="eng-subs" class="odometer">00,000,000</p>
 					<p id="eng-view" class="odometer">00,000,000</p>
 				</div>
 			</div>
 			<div class="vg-cell vg-mobile vg-col l4 m6 s12">
-				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3 vg-cell-middle"><p><img class="vg-circle" id="hin" height="48" width="48">Hindi</p></div>
-				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9 vg-cell-middle">
+				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3"><p><img src="assets/pics/icon.png" class="vg-circle" id="hin" height="60" width="60">Hindi</p></div>
+				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9">
 					<p id="hin-subs" class="odometer">00,000,000</p>
 					<p id="hin-view" class="odometer">00,000,000</p>
 				</div>
 			</div>
 			<div class="vg-cell vg-mobile vg-col l4 m6 s12">
-				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3 vg-cell-middle"><p><img class="vg-circle" id="mar" height="48" width="48">Marathi</p></div>
-				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9 vg-cell-middle">
+				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3"><p><img  src="assets/pics/icon.png" class="vg-circle" id="mar" height="60" width="60">Marathi</p></div>
+				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9">
 					<p id="mar-subs" class="odometer">00,000,000</p>
 					<p id="mar-view" class="odometer">00,000,000</p>
 				</div>
 			</div>
 			<div class="vg-cell vg-mobile vg-col l4 m6 s12">
-				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3 vg-cell-middle"><p><img class="vg-circle" id="pun" height="48" width="48">Punjabi</p></div>
-				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9 vg-cell-middle">
+				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3"><p><img  src="assets/pics/icon.png" class="vg-circle" id="pun" height="60" width="60">Punjabi</p></div>
+				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9">
 					<p id="pun-subs" class="odometer">00,000,000</p>
 					<p id="pun-view" class="odometer">00,000,000</p>
 				</div>
 			</div>
 			<div class="vg-cell vg-mobile vg-col l4 m6 s12">
-				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3 vg-cell-middle"><p><img class="vg-circle" id="tel" height="48" width="48">Telugu</p></div>
-				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9 vg-cell-middle">
+				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3"><p><img  src="assets/pics/icon.png" class="vg-circle" id="tel" height="60" width="60">Telugu</p></div>
+				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9">
 					<p id="tel-subs" class="odometer">00,000,000</p>
 					<p id="tel-view" class="odometer">00,000,000</p>
 				</div>
 			</div>
 			<div class="vg-cell vg-mobile vg-col l4 m6 s12">
-				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3 vg-cell-middle"><p><img class="vg-circle" id="tam" height="48" width="48">Tamil</p></div>
-				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9 vg-cell-middle">
+				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3"><p><img  src="assets/pics/icon.png" class="vg-circle" id="tam" height="60" width="60">Tamil</p></div>
+				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9">
 					<p id="tam-subs" class="odometer">00,000,000</p>
 					<p id="tam-view" class="odometer">00,000,000</p>
 				</div>
 			</div>
 			<div class="vg-cell vg-mobile vg-col l4 m6 s12">
-				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3 vg-cell-middle"><p><img class="vg-circle" id="ban" height="48" width="48">Bengali</p></div>
-				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9 vg-cell-middle">
+				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3"><p><img  src="assets/pics/icon.png" class="vg-circle" id="ban" height="60" width="60">Bengali</p></div>
+				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9">
 					<p id="ban-subs" class="odometer">00,000,000</p>
 					<p id="ban-view" class="odometer">00,000,000</p>
 				</div>
 			</div>
 			<div class="vg-cell vg-mobile vg-col l4 m6 s12">
-				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3 vg-cell-middle"><p><img class="vg-circle" id="guj" height="48" width="48">Gujarati</p></div>
-				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9 vg-cell-middle">
+				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3"><p><img  src="assets/pics/icon.png" class="vg-circle" id="guj" height="60" width="60">Gujarati</p></div>
+				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9">
 					<p id="guj-subs" class="odometer">00,000,000</p>
 					<p id="guj-view" class="odometer">00,000,000</p>
 				</div>
 			</div>
 			<div class="vg-cell vg-mobile vg-col l4 m6 s12">
-				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3 vg-cell-middle"><p><img class="vg-circle" id="mal" height="48" width="48">Malyalam</p></div>
-				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9 vg-cell-middle">
+				<div class="vg-cell vg-container vg-center vg-col l3 m4 s3"><p><img  src="assets/pics/icon.png" class="vg-circle" id="mal" height="60" width="60">Malyalam</p></div>
+				<div class="vg-cell vg-container vg-center vg-col l9 m8 s9">
 					<p id="mal-subs" class="odometer">00,000,000</p>
 					<p id="mal-view" class="odometer">00,000,000</p>
 				</div>
@@ -79,12 +80,23 @@
 		</div>
 	</br>
 		<div class="vg-bar">
-			<button class="vg-btn vg-disabled vg-col l8 m4 s12">THEME</button>
+			<button class="vg-button vg-disabled vg-col l8 m4 s12">THEME</button>
 			<button class="vg-button vg-white vg-col l2 m4 s6" onclick="myfunc1()">Light</button>
 			<button class="vg-button vg-black vg-col l2 m4 s6" onclick="myfunc2()">Dark</button>
 		</div>
 		<script src="assets/js/odometer.min.js"></script>
 		<script>
+			function myfunc1() {
+				var x = document.getElementById("page");
+				var time = new Date().getHours();
+				if(time < 6){
+					x.style ="color:#fff!important;background-color:#000!important";
+				}else if(time < 18){
+					x.style ="color:#000!important;background-color:#fff!important";
+				}else{
+					x.style ="color:#fff!important;background-color:#000!important";
+				}
+			};
 			function myfunc1() {
 				var x = document.getElementById("page");
 				if(x.style="color:#fff!important;background-color:#000!important"){

@@ -7,7 +7,7 @@
 		<link rel="shortcut icon" type="image/png" href="assets/pics/favicon.png"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	</head>
-	<body id="page" onload="myfunc()" >
+	<body id="page">
 		<div class="vg-container vg-center"><h3>Josh Talks</h3></div>
 		<div class="vg-container vg-row" style="font-size:1.5rem">
 			<div class="vg-container vg-center vg-col s6 vg-mobile">Subs:<b id="totalsubs" class="odometer">00,000,000</b></div>
@@ -85,10 +85,9 @@
 			<button class="vg-button vg-black vg-col l2 m4 s6" onclick="myfunc2()">Dark</button>
 		</div>
 		<script src="assets/js/odometer.min.js"></script>
-		<script>
-			function myfunc() {
-				var x = document.getElementById("page");
-				var time = new Date().getHours();
+		<script>							
+			var x = document.getElementById("page");			
+			var time = new Date().getHours();
 				if(time < 6){
 					x.style ="color:#fff!important;background-color:#000!important";
 				}else if(time < 18){
@@ -96,7 +95,7 @@
 				}else{
 					x.style ="color:#fff!important;background-color:#000!important";
 				}
-			};
+			
 			function myfunc1() {
 				var x = document.getElementById("page");
 				if(x.style="color:#fff!important;background-color:#000!important"){

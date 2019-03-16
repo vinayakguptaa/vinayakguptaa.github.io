@@ -12,7 +12,6 @@ YT.live = {
         promises.push($.getJSON("https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + y + "&key=" + YT.keyManager.getKey()));
     });
     $.when(promises).done(function(a){
-      count = 0;
       $.each(a, function(c, b){
         b.then(function(x){
           countMap[x.items[0].id] =parseInt(x.items[0].statistics.subscriberCount);
@@ -99,6 +98,7 @@ YT.live = {
             case "UCHO1It3X8dB0Lfxer_4ev-A":
               od1pun.update(x.items[0].statistics.subscriberCount);
               od2pun.update(x.items[0].statistics.viewCount);
+          //    document.getElementById("pun_name").innerHTML=x.items[0].snippet.title;
               document.getElementById("pun").src=x.items[0].snippet.thumbnails.default.url;
             break;
             case "UChlEKXoTTTizQN5trVkyNiQ":
@@ -139,7 +139,6 @@ YT.live = {
   },
   timer: null,
   start: function() {
-    YT.live.profile();
     this.timer = setInterval(function(e) {
         YT.live.update();
     }, 4000);
@@ -153,6 +152,7 @@ $(function() {
   YT.live.start();
 });
 $(document).ready(function(){
+  YT.live.profile();
   $(window).focus(function(){
     console.log('started ');
     YT.live.start();

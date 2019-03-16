@@ -1,5 +1,14 @@
 <html>
 	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136310796-1"></script>
+		<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+  		gtag('config', 'UA-136310796-1');
+		</script>
+		<!-- Google Analytics End-->
 		<title>JoshTalks</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="assets/css/basic.css">
@@ -85,17 +94,16 @@
 			<button class="vg-button vg-black vg-col l2 m4 s6" onclick="myfunc2()">Dark</button>
 		</div>
 		<script src="assets/js/odometer.min.js"></script>
-		<script>							
-			var x = document.getElementById("page");			
+		<script>
+			var x = document.getElementById("page");
 			var time = new Date().getHours();
-				if(time < 6){
-					x.style ="color:#fff!important;background-color:#000!important";
-				}else if(time < 18){
-					x.style ="color:#000!important;background-color:#fff!important";
-				}else{
-					x.style ="color:#fff!important;background-color:#000!important";
-				}
-			
+			if(time < 6){
+				x.style ="color:#fff!important;background-color:#000!important";
+			}else if(time < 18){
+				x.style ="color:#000!important;background-color:#fff!important";
+			}else{
+				x.style ="color:#fff!important;background-color:#000!important";
+			}
 			function myfunc1() {
 				var x = document.getElementById("page");
 				if(x.style="color:#fff!important;background-color:#000!important"){

@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<title>YouTubeRealTime</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../../assets/css/basic.css">
+		<link rel="stylesheet" href="../../assets/css/odometer-theme.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="shortcut icon" type="image/png" href="../assets/pics/favicon.png"/>
+		<style>
+			.mySlides{display:none;}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	</head>
+	<body id="page">
+		<div id="wrapper">
+			<div class="vg-topbar" style="background-image:linear-gradient(25deg,#ff0000,#800080)">
+			  <div class="vg-bar">
+			    <div class="vg-bar-item vg-col l4 m3 s12">
+			      <button class="vg-button vg-col l2 m5 s2 vg-hover-none" onclick="vg_openclose()"><i class="material-icons vg-text-white" style="font-size: 2rem;padding-top:0.4rem">menu</i></button>
+			      <a href="../index.html" class="vg-button vg-col l10 m7 s10 vg-hover-none">
+			        <img src="../assets/pics/icon.png" height="40px">
+			        <b class="vg-hide-medium vg-text-white">YouTubeRealTime</b>
+			      </a>
+			    </div>
+			    <form class="vg-bar-item vg-center vg-col l8 m9 s12" style="padding-top:1rem">
+			      <input id="searchvalue" class="vg-input vg-col l11 s10" type="text" placeholder="Search...."></input>
+			      <button id="search" type="button" class="vg-button vg-hover-purple vg-red vg-col l1 s2"><i class="material-icons" style="font-size: 1.6rem">search</i></button>
+			    </form>
+			  </div>
+			</div>
+			<div class="vg-container">
+			  <div class="vg-sidebar vg-center vg-bar-block vg-col l2 m3" id="mySidebar">
+			    <button class="vg-bar-item vg-button vg-large" onclick="vg_close()">Close &times;</button>
+			    <button class="vg-bar-item vg-button" id="theme"></button>
+			    <a href="josh/index.html" class="vg-bar-item vg-button">JoshTalks</a>
+			    <a href="#" class="vg-bar-item vg-button">Channel Group2</a>
+			    <a href="mailto:guptavinayakg@gmail.com" class="vg-bar-item vg-button">Your Channel Here </a>
+			  </div>
+			</div>
+		</div>
+		<div class="vg-container" id="main">
+			<div id="SS" class="vg-container vg-center" style="height: 100px;">
+				<div class="vg-col l3 m2 vg-center vg-hide-small">&nbsp</div>
+				<img id="banner_eng" class="vg-col l6 m8 s12 mySlides vg-animate-fading" src="../assets/pics/icon.png" alt="JoshTalks" height="100px">
+				<img id="banner_hin" class="vg-col l6 m8 s12 mySlides vg-animate-fading" src="../assets/pics/icon.png" alt="JoshTalks" height="100px">
+				<img id="banner_mar" class="vg-col l6 m8 s12 mySlides vg-animate-fading" src="../assets/pics/icon.png" alt="JoshTalks" height="100px">
+				<img id="banner_pun" class="vg-col l6 m8 s12 mySlides vg-animate-fading" src="../assets/pics/icon.png" alt="JoshTalks" height="100px">
+				<img id="banner_guj" class="vg-col l6 m8 s12 mySlides vg-animate-fading" src="../assets/pics/icon.png" alt="JoshTalks" height="100px">
+				<img id="banner_tam" class="vg-col l6 m8 s12 mySlides vg-animate-fading" src="../assets/pics/icon.png" alt="JoshTalks" height="100px">
+				<img id="banner_tel" class="vg-col l6 m8 s12 mySlides vg-animate-fading" src="../assets/pics/icon.png" alt="JoshTalks" height="100px">
+				<img id="banner_mal" class="vg-col l6 m8 s12 mySlides vg-animate-fading" src="../assets/pics/icon.png" alt="JoshTalks" height="100px">
+				<img id="banner_ban" class="vg-col l6 m8 s12 mySlides vg-animate-fading" src="../assets/pics/icon.png" alt="JoshTalks" height="100px">
+				<div class="vg-col l3 m2 vg-center vg-hide-small">&nbsp</div>
+			</div>
+			<div class="vg-container vg-center"><h3>Josh Talks</h3></div>
+			<div class="vg-container vg-row" style="font-size:1.2rem">
+				<div class="vg-container vg-center vg-col s6 vg-mobile">Subs:<b id="totalsubs" class="odometer">00,000,000</b></div>
+				<div class="vg-container vg-center vg-col s6 vg-mobile">Views:<b id="totalviews" class="odometer">00,000,000,000</b></div>
+			</div>
+			<div class="vg-container vg-row">
+				<div class="vg-cell vg-mobile vg-col l4 m6 s12">
+					<div class="vg-container vg-center vg-col l4 m4 s3"><p><img src="../assets/pics/icon.png" class="vg-circle" id="eng" height="60" width="60"><br>English</p></div>
+					<div class="vg-container vg-center vg-col l8 m8 s9">
+						<p id="eng-subs" class="odometer">00,000,000</p>
+						<p id="eng-view" class="odometer">00,000,000</p>
+					</div>
+				</div>
+				<div class="vg-cell vg-mobile vg-col l4 m6 s12">
+					<div class="  vg-container vg-center vg-col l4 m4 s3"><p><img src="../assets/pics/icon.png" class="vg-circle" id="hin" height="60" width="60"><br>Hindi</p></div>
+					<div class="  vg-container vg-center vg-col l8 m8 s9">
+						<p id="hin-subs" class="odometer">00,000,000</p>
+						<p id="hin-view" class="odometer">00,000,000</p>
+					</div>
+				</div>
+				<div class="vg-cell vg-mobile vg-col l4 m6 s12">
+					<div class="  vg-container vg-center vg-col l4 m4 s3"><p><img  src="../assets/pics/icon.png" class="vg-circle" id="mar" height="60" width="60"><br>Marathi</p></div>
+					<div class="  vg-container vg-center vg-col l8 m8 s9">
+						<p id="mar-subs" class="odometer">00,000,000</p>
+						<p id="mar-view" class="odometer">00,000,000</p>
+					</div>
+				</div>
+				<div class="vg-cell vg-mobile vg-col l4 m6 s12">
+					<div class="  vg-container vg-center vg-col l4 m4 s3"><p><img  src="../assets/pics/icon.png" class="vg-circle" id="pun" height="60" width="60"><br>Punjabi</p></div>
+					<div class="  vg-container vg-center vg-col l8 m8 s9">
+						<p id="pun-subs" class="odometer">00,000,000</p>
+						<p id="pun-view" class="odometer">00,000,000</p>
+					</div>
+				</div>
+				<div class="vg-cell vg-mobile vg-col l4 m6 s12">
+					<div class="  vg-container vg-center vg-col l4 m4 s3"><p><img  src="../assets/pics/icon.png" class="vg-circle" id="tel" height="60" width="60"><br>Telugu</p></div>
+					<div class="  vg-container vg-center vg-col l8 m8 s9">
+						<p id="tel-subs" class="odometer">00,000,000</p>
+						<p id="tel-view" class="odometer">00,000,000</p>
+					</div>
+				</div>
+				<div class="vg-cell vg-mobile vg-col l4 m6 s12">
+					<div class="  vg-container vg-center vg-col l4 m4 s3"><p><img  src="../assets/pics/icon.png" class="vg-circle" id="tam" height="60" width="60"><br>Tamil</p></div>
+					<div class="  vg-container vg-center vg-col l8 m8 s9">
+						<p id="tam-subs" class="odometer">00,000,000</p>
+						<p id="tam-view" class="odometer">00,000,000</p>
+					</div>
+				</div>
+				<div class="vg-cell vg-mobile vg-col l4 m6 s12">
+					<div class="  vg-container vg-center vg-col l4 m4 s3"><p><img  src="../assets/pics/icon.png" class="vg-circle" id="ban" height="60" width="60"><br>Bengali</p></div>
+					<div class="  vg-container vg-center vg-col l8 m8 s9">
+						<p id="ban-subs" class="odometer">00,000,000</p>
+						<p id="ban-view" class="odometer">00,000,000</p>
+					</div>
+				</div>
+				<div class="vg-cell vg-mobile vg-col l4 m6 s12">
+					<div class="  vg-container vg-center vg-col l4 m4 s3"><p><img  src="../assets/pics/icon.png" class="vg-circle" id="guj" height="60" width="60"><br>Gujarati</p></div>
+					<div class="  vg-container vg-center vg-col l8 m8 s9">
+						<p id="guj-subs" class="odometer">00,000,000</p>
+						<p id="guj-view" class="odometer">00,000,000</p>
+					</div>
+				</div>
+				<div class="vg-cell vg-mobile vg-col l4 m6 s12">
+					<div class="  vg-container vg-center vg-col l4 m4 s3"><p><img  src="../assets/pics/icon.png" class="vg-circle" id="mal" height="60" width="60"><br>Malyalam</p></div>
+					<div class="  vg-container vg-center vg-col l8 m8 s9">
+						<p id="mal-subs" class="odometer">00,000,000</p>
+						<p id="mal-view" class="odometer">00,000,000</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 3999); // Change image every 2 seconds
+}
+</script>
+		<script src="../assets/js/basic.js"></script>
+		<script src="../../assets/js/odometer.min.js"></script>
+		<script src="assets/js/basic.js"></script>
+		<script src="assets/js/stats.js"></script>
+	</body>
+</html>

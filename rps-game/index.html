@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock, Paper & Scissor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/basic.css">
+    <style>
+        .imgbox{height: 120px;}.img{height: 90px;}.rs{height: 50px;position:absolute;top:37%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+        @media(min-width: 601px){.imgbox{height: 200px;}.img{height: 160px;}.rs{height: 80px;top:30%}}
+        @media(min-width: 993px){.imgbox{height: 300px;}.img{height: 240px;}.rs{height: 120px;top:37%;}}
+    </style>
+  </head>
+  <body>
+    <div class="vg-container vg-blue vg-center">
+      <h4>ROCK PAPER AND SCISSORS</h4>
+    </div>
+    <div class="vg-container vg-light-blue vg-col m6 s12">
+      <h4 class="vg-col s6">Computer</h4>
+      <button class="vg-button vg-col s6">Score:&nbsp <b id="c_score">0</b></button>
+      <div class="vg-center vg-col s12 imgbox">
+        <img id="comp" class="img">
+      </div>
+    </div>
+      <img id="res" src="assets/vs.png" class="rs">
+    <div class="vg-container vg-teal vg-col m6 s12">
+      <h4 class="vg-col s6">You</h4>
+      <button class="vg-button vg-col s6">Score:&nbsp <b id="p_score">0</b></button>
+      <div class="vg-center vg-col s12 imgbox">
+        <img id="play" class="img">
+      </div>
+    </div>
+    <div class="vg-container vg-grey">
+      <div class="vg-container vg-text-white vg-col s12">
+        <button class="vg-button vg-col m4 s12" onclick="R()"><img src="assets/rock.png" width="30px">ROCK</button>
+        <button class="vg-button vg-col m4 s12" onclick="P()"><img src="assets/paper.png" width="30px">PAPER</button>
+        <button class="vg-button vg-col m4 s12" onclick="S()"><img src="assets/sci.png" width="30px">SCISSORS</button>
+      </div>
+    </div>
+    <div class="vg-container vg-blue vg-center">
+      <h4>A Web App Developed by: <a href="../index.html">Vinayak Gupta<a></h4>
+    </div>
+    <script type="text/javascript">
+      var play=10;
+      var comp=10;
+      function computer(){
+        var x = Math.floor((Math.random() * 300) + 0);
+        comp = x%3;
+        var p,c;
+        p = document.getElementById('p_score').innerHTML;
+        c = document.getElementById('c_score').innerHTML;
+        if(comp===0){
+          document.getElementById('comp').src="assets/rock.png";
+          if(play===0){
+            document.getElementById('res').src="assets/vs.png";
+          }
+          else if (play===1) {
+            document.getElementById('res').src="assets/won.png";
+            document.getElementById('p_score').innerHTML=Number(p)+1;
+          }
+          else{
+            document.getElementById('res').src="assets/lost.png";
+            c = document.getElementById('c_score').innerHTML=Number(c)+1;
+          }
+        }
+        else if(comp===1){
+          document.getElementById('comp').src="assets/paper.png";
+          if(play===0){
+            document.getElementById('res').src="assets/lost.png";
+            document.getElementById('c_score').innerHTML=Number(c)+1;
+          }
+          else if (play===1) {
+            document.getElementById('res').src="assets/vs.png";
+          }
+          else{
+            document.getElementById('res').src="assets/won.png";
+            document.getElementById('p_score').innerHTML=Number(p)+1;
+          }
+        }
+        else if(comp===2){
+          document.getElementById('comp').src="assets/sci.png";
+          if(play===0){
+            document.getElementById('res').src="assets/won.png";
+            document.getElementById('p_score').innerHTML=Number(p)+1;
+          }
+          else if (play===1) {
+            document.getElementById('res').src="assets/lost.png";
+            document.getElementById('c_score').innerHTML=Number(c)+1;
+          }
+          else{
+            document.getElementById('res').src="assets/vs.png";
+          }
+        }
+      }
+      function R(){
+        document.getElementById('play').src="assets/rock.png";
+        play=0;
+        computer();
+      }
+      function P(){
+        document.getElementById('play').src="assets/paper.png";
+        play=1;
+        computer();
+      }
+      function S(){
+        document.getElementById('play').src="assets/sci.png";
+        play=2;
+        computer();
+      }
+    </script>
+  </body>
+</html>

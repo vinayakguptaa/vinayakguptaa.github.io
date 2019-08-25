@@ -4,20 +4,145 @@
     <title>Vinayak Gupta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/basic.css">
+    <link href='https://fonts.googleapis.com/css?family=Expletus Sans' rel='stylesheet'>
+    <style>
+      .head{font-size:6.8vh;font-family: "expletus sans",sans-serif}.subhead{font-size:3vh;font-family: "expletus sans",sans-serif}
+      @media(min-width : 601px){.head{font-size:6vw;}.subhead{font-size:3vw;}}
+      .vg-container canvas #overlay{position: absolute;}.shadow-overlay {position: absolute;top: 0;left: 0;width: 100%;height: 100%;overflow: hidden;}
+    </style>
   </head>
-  <body>
-    <div class="vg-container" style="height:600px;position:relative;">
-      <div style="position:absolute;top:40%">
-        <h1 class="vg-animate-right" style="font-size:5rem;">Vinayak&nbspGupta</h1>
-        <h3 class="vg-animate-right">Student&nbsp&amp&nbspDeveloper</h3>
+  <body class="vg-black">
+    <div class="shadow-overlay" id="wave">
+      <canvas width="1368" height="1334" style="width: 684px; height: 667px;"></canvas>
+    </div>
+    <div class="vg-container" style="height:100vh;position:relative;">
+      <div style="position:absolute;top:36vh">
+        <h1 class="vg-animate-right head">Vinayak&nbspGupta</h1>
+        <h3 class="vg-animate-right subhead"><b style="color: #1f40f9">&lt/&gt&nbsp&nbsp</b>Student&nbsp&amp&nbspDeveloper</h3>
+      </div>
+      <div style="position:absolute;top:90vh;right:5vw">
+        <a href="#projects" style = "text-decoration:none"><button class="vg-btn vg-black">Scroll Down</button><button class="vg-btn vg-circle vg-white"><span style = "font-size: 4vh;">V</span></button></a>
       </div>
     </div>
-    <div class="vg-center vg-container">
-      <h3>Projects</h3>
+    <div id="projects" class="vg-center vg-container vg-white" style = "height:90vh;position:relative;width:100%;">
+      <h1>Projects</h1>
       <p>
         <a href="youtube-realtime/index.html" class="vg-btn">YouTubeRealTime</a>
         <a href="rps-game/index.html" class="vg-btn">Rock, Paper & Scissor</a>
       </p>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.3/dist/aos.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.96.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.96.0/examples/js/renderers/CanvasRenderer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.96.0/examples/js/renderers/Projector.js"></script>
+    <script type="text/javascript">
+      (function($) {
+        var Preloader = function() {
+          $("html").addClass('preload');
+          $(window).on('load', function() {
+            $("#loader").fadeOut("slow", function() {
+                $("#preloader").delay(300).fadeOut("slow");
+          });
+          $("html").removeClass('preload');
+          $("html").addClass('loaded');
+        });
+      };
+      var Animation = function() {
+        var SEPARATION = 100
+          , AMOUNTX = 25
+          , AMOUNTY = 40;
+        var camera, scene, renderer;
+        var particles, particle, count = 0;
+        var windowHalfX = window.innerWidth / 2;
+        var windowHalfY = window.innerHeight / 2;
+        var mouseX = -windowHalfX
+          , mouseY = -windowHalfY;
+        function init() {
+            camera = new THREE.PerspectiveCamera(65,window.innerWidth / window.innerHeight,1,1E5);
+            camera.position.z = 1000;
+            scene = new THREE.Scene();
+            particles = new Array();
+            var PI2 = Math.PI * 2;
+            var material = new THREE.SpriteCanvasMaterial({
+                color: 0xFFFFFF,
+                program: function(context) {
+                    context.beginPath();
+                    context.arc(0, 0, 0.25, 0, PI2, true);
+                    context.fill();
+                }
+            });
+            var i = 0;
+            for (var ix = 0; ix < AMOUNTX; ix++) {
+                for (var iy = 0; iy < AMOUNTY; iy++) {
+                    particle = particles[i++] = new THREE.Sprite(material);
+                    particle.position.x = ix * SEPARATION - ((AMOUNTX * SEPARATION) / 2);
+                    particle.position.z = iy * SEPARATION - ((AMOUNTY * SEPARATION) / 2);
+                    scene.add(particle);
+                }
+            }
+            renderer = new THREE.CanvasRenderer();
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            $('#wave').prepend(renderer.domElement);
+            $(document).on('mousemove', function(event) {
+                mouseX = event.clientX * 0.5 - windowHalfX;
+            }).trigger('mousemouve');
+            $(window).on('resize', function() {
+                windowHalfX = window.innerWidth / 2;
+                windowHalfY = window.innerHeight / 2;
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+            render();
+        }
+        function render() {
+            camera.position.x += (mouseX - camera.position.x) * .03;
+            camera.position.y += (-mouseY - camera.position.y) * .05;
+            camera.position.z += (mouseX + mouseY -camera.position.z)* .01;
+            camera.lookAt(scene.position);
+            var i = 0;
+            for (var ix = 0; ix < AMOUNTX; ix++) {
+                for (var iy = 0; iy < AMOUNTY; iy++) {
+                    particle = particles[i++];
+                    particle.position.x = 2*(Math.sin((ix + count) * 0.25) * 50) + 3*(Math.sin((iy + count) * 0.5) * 50);
+                    particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.25) + 1) * 3 + (Math.sin((iy + count) * 0.5) + 1) * 2;
+                }
+            }
+            renderer.render(scene, camera);
+            count += 0.05;
+            requestAnimationFrame(render);
+        }
+        return init();
+      }
+      var SmoothScroll = function() {
+        $('.smoothscroll').on('click', function(e) {
+            var $target = $(this.hash);
+            e.preventDefault();
+            e.stopPropagation();
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 800, 'swing');
+        });
+      };
+      var AOSStart = function() {
+        AOS.init({
+            offset: 100,
+            duration: 200,
+            easing: 'ease-in-sine',
+            delay: 250,
+            once: true,
+            disable: 'mobile'
+        });
+      };
+      (function() {
+        Preloader();
+        Animation();
+        SmoothScroll();
+        AOSStart();
+      })();}
+      )(jQuery);
+    </script>
   </body>
 </html>

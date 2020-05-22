@@ -3,51 +3,122 @@
   <head>
     <meta charset="utf-8">
     <title>Rock, Paper & Scissor</title>
+    <link rel="icon" href="assets/images.png" type="images/png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../assets/css/basic.css">
     <style>
-        .maincon{background-image:linear-gradient(0deg,#b7f8db,#50a7ff)}.imgbox{height: 120px;}.img{height: 90px;}.rs{height: 50px;position:absolute;top:220px;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
-        @media(min-width: 601px){.maincon{background-image:linear-gradient(270deg,#b7f8db,#50a7ff)}.imgbox{height: 200px;}.img{height: 160px;}.rs{height: 80px;top:200px}}
+        .maincon{background-image:linear-gradient(0deg,#8b1616,#50a7ff)}.imgbox{height: 120px;}.img{height: 90px;}.rs{height: 50px;position:absolute;top:220px;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+        @media(min-width: 601px){.maincon{background-image:linear-gradient(270deg,#8b1616b,#50a7ff)}.imgbox{height: 200px;}.img{height: 160px;}.rs{height: 80px;top:200px}}
         @media(min-width: 993px){.imgbox{height: 300px;}.img{height: 240px;}.rs{height: 120px;top:250px;;}}
+       
+.btn{
+  background-color: #8b161600;
+  border:none
+
+  
+  }
+}        
+.btn:hover{
+  background-color: #8b161600;
+}
+}
+
+.player{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
     </style>
   </head>
   <body>
     <div class="vg-container vg-blue vg-center" style="height: 50px;">
-      <h5>ROCK PAPER AND SCISSORS</h5>
+      <h5>ROCK PAPER SCISSORS</h5>
     </div>
-    <img id="res" src="assets/vs.png" class="rs">
+    <img id="res" src="assets/lets.png" class="rs">
     <div class="vg-container maincon">
       <div class="vg-container vg-col m6 s12">
         <h4 class="vg-col s6">Computer</h4>
-        <button class="vg-button vg-col s6">Score:&nbsp <b id="c_score">0</b></button>
+        <button class="btn">Score:&nbsp; <b id="c_score">0</b></button>
         <div class="vg-center vg-col s12 imgbox">
           <img id="comp" class="img">
         </div>
       </div>
       <div class="vg-container vg-col m6 s12">
-        <h4 class="vg-col s6">You</h4>
-        <button class="vg-button vg-col s6">Score:&nbsp <b id="p_score">0</b></button>
+        <h4 class="vg-col s6">Player</h4>
+        <button class="btn">Score:&nbsp; <b id="p_score">0</b></button>
         <div class="vg-center vg-col s12 imgbox">
-          <img id="play" class="img">
+          <img id="play" class="img player">
         </div>
       </div>
     </div>
-    <div class="vg-container" style="background-color:#99aacc;">
+    <div class="vg-container" style="background-color:#8b1616;">
       <div class="vg-container vg-text-white vg-col s12">
         <button class="vg-button vg-col m4 s12 vg-hover-none" onclick="R()"><img src="assets/rock.png" width="30px">ROCK</button>
         <button class="vg-button vg-col m4 s12 vg-hover-none" onclick="P()"><img src="assets/paper.png" width="30px">PAPER</button>
         <button class="vg-button vg-col m4 s12 vg-hover-none" onclick="S()"><img src="assets/sci.png" width="30px">SCISSORS</button>
       </div>
     </div>
-    <div class="vg-container vg-light-grey">
-      “Rock paper scissors” is a simple and interesting game. Many of us used to play it in a school to resolve disputes or just to spend some time.<br/>
-      The rules are very simple and probably you remember them from your childhood:<br/>
-      <ul>
-        <li>If you choose Rock, you will win against Scissors but lose against Paper.</li>
-        <li>If you choose Scissors, you will win against Paper but lose against Rock.</li>
-        <li>If you choose Paper, you will win against Rock but lose against Scissors.</li>
-      </ul>
-    </div>
+    <style>
+      .accordion {
+        background-color: #8b1616;
+        color: rgb(255, 255, 255)253, 224, 224);
+        cursor: pointer;
+        padding: 18px;
+        width:100%;
+        border: none;
+        text-align: centre;
+        outline: none;
+        font-size: 28px;
+        transition: 0.5s;
+      }
+      
+      .active, .accordion:hover {
+        background-color: white;
+        
+      
+      }
+      
+      .panel {
+        padding: 0 18px;
+        background-color: rgba(255, 255, 255, 0);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+      </style>
+      </head>
+      <body>
+      
+      <button class="accordion">INFO</button>
+      <div class="panel">
+        <p>“Rock paper scissors” is a simple and interesting game. Many of us used to play it in a school to resolve disputes or just to spend some time.<br/>
+          The rules are very simple and probably you remember them from your childhood:<br/>
+         </p>
+      </div><button class="accordion">Rules</button>
+      <div class="panel">
+        
+            <li><b>If you choose Rock, you will win against Scissors but lose against Paper.</li>
+            <li>If you choose Scissors, you will win against Paper but lose against Rock.</li>
+            <li>If you choose Paper, you will win against Rock but lose against Scissors.</b></li>
+          </ul></p>.</p>
+      </div>
+      
+      <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+      
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          } 
+        });
+      }
+      </script>
+      
     <div class="vg-container vg-blue vg-center">
       <h4>A Web App Developed by: <a href="../index.html">Vinayak Gupta<a></h4>
     </div>
@@ -63,7 +134,7 @@
         if(comp===0){
           document.getElementById('comp').src="assets/rock.png";
           if(play===0){
-            document.getElementById('res').src="assets/vs.png";
+            document.getElementById('res').src="assets/draw.png";
           }
           else if (play===1) {
             document.getElementById('res').src="assets/won.png";
@@ -81,7 +152,7 @@
             document.getElementById('c_score').innerHTML=Number(c)+1;
           }
           else if (play===1) {
-            document.getElementById('res').src="assets/vs.png";
+            document.getElementById('res').src="assets/draw.png";
           }
           else{
             document.getElementById('res').src="assets/won.png";
@@ -99,7 +170,7 @@
             document.getElementById('c_score').innerHTML=Number(c)+1;
           }
           else{
-            document.getElementById('res').src="assets/vs.png";
+            document.getElementById('res').src="assets/draw.png";
           }
         }
       }

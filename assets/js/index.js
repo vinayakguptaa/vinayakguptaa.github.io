@@ -110,7 +110,7 @@ $(document).ready(function () {
 
 });
 
-const nop = (window.innerWidth + window.innerHeight)
+var nop = (window.innerWidth + window.innerHeight)
 if(nop < 6000) nop = 6000;
 
 /* ---- particles.js config ---- */

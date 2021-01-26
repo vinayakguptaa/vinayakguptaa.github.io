@@ -111,6 +111,7 @@ $(document).ready(function () {
 });
 
 const nop = (window.innerWidth + window.innerHeight)
+if(nop < 6000) nop = 6000;
 
 /* ---- particles.js config ---- */
 
@@ -219,7 +220,7 @@ particlesJS("particles-js", {
 particlesJS("about", {
     "particles": {
         "number": {
-            "value": nop/6,
+            "value": nop/90,
             "density": {
                 "enable": true,
                 "value_area": 800

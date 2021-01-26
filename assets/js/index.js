@@ -117,7 +117,7 @@ const nop = (window.innerWidth + window.innerHeight)
 particlesJS("particles-js", {
     "particles": {
         "number": {
-            "value": nop/6,
+            "value": nop/60,
             "density": {
                 "enable": true,
                 "value_area": 800
